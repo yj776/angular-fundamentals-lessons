@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: true,  // we use standalone true when we don't want the module to manage dependencies
+  imports: [UserinfoComponent],  // We then will use imports to manage dependencies for this component
   template: `
     <section class="menu">🏠 Home</section>
     <section class="main">
       <h1>Metrics and Figures Dashboard</h1>
       <section class="content">
-        <article class="tile"></article>
+        <article class="tile">
+          <app-userinfo />
+        </article>
         <article class="tile">
           <img src="/assets/noun-pie-chart-6331100-C462DD.png" height="300" />
         </article>
